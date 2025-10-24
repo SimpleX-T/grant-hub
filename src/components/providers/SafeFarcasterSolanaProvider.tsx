@@ -1,9 +1,12 @@
 import React, { createContext, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { sdk } from '@farcaster/miniapp-sdk';
+import { sdk } from "@farcaster/miniapp-sdk";
 
 const FarcasterSolanaProvider = dynamic(
-  () => import('@farcaster/mini-app-solana').then(mod => mod.FarcasterSolanaProvider),
+  () =>
+    import("@farcaster/mini-app-solana").then(
+      (mod) => mod.FarcasterSolanaProvider
+    ),
   { ssr: false }
 );
 
@@ -12,9 +15,14 @@ type SafeFarcasterSolanaProviderProps = {
   children: React.ReactNode;
 };
 
-const SolanaProviderContext = createContext<{ hasSolanaProvider: boolean }>({ hasSolanaProvider: false });
+const SolanaProviderContext = createContext<{ hasSolanaProvider: boolean }>({
+  hasSolanaProvider: false,
+});
 
-export function SafeFarcasterSolanaProvider({ endpoint, children }: SafeFarcasterSolanaProviderProps) {
+export function SafeFarcasterSolanaProvider({
+  endpoint,
+  children,
+}: SafeFarcasterSolanaProviderProps) {
   const isClient = typeof window !== "undefined";
   const [hasSolanaProvider, setHasSolanaProvider] = useState<boolean>(false);
   const [checked, setChecked] = useState<boolean>(false);

@@ -76,7 +76,7 @@ export function ProfileMenu() {
           {/* Verification Status Indicator */}
           <div
             className={`absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full border-2 border-gray-950 ${
-              isVerified ? "bg-green-500" : "bg-gray-500"
+              isVerified ? "bg-purple-500" : "bg-gray-500"
             }`}
           />
         </div>
@@ -134,18 +134,18 @@ export function ProfileMenu() {
             <div
               className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
                 isVerified
-                  ? "bg-green-900/30 border border-green-500/30"
+                  ? "bg-purple-900/30 border border-purple-500/30"
                   : "bg-gray-800/50 border border-gray-700/50"
               }`}
             >
               <div
                 className={`w-2 h-2 rounded-full ${
-                  isVerified ? "bg-green-500" : "bg-gray-500"
+                  isVerified ? "bg-purple-500" : "bg-gray-500"
                 }`}
               />
               <span
                 className={`text-sm font-semibold ${
-                  isVerified ? "text-green-300" : "text-gray-400"
+                  isVerified ? "text-purple-300" : "text-gray-400"
                 }`}
               >
                 {isVerified ? "Verified Student" : "Not Verified"}
@@ -197,7 +197,7 @@ export function ProfileMenu() {
                 className="flex items-center gap-3 px-3 py-2 text-white hover:bg-purple-900/50 rounded-lg transition-colors"
               >
                 <svg
-                  className="w-5 h-5 text-green-400"
+                  className="w-5 h-5 text-purple-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

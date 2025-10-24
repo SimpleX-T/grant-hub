@@ -63,6 +63,7 @@ export default function VerifyPage() {
       await checkUserVerification(address);
       router.push("/");
     } catch (err: any) {
+      console.error("Failed to check verification status:", err);
       setError("Failed to check verification status");
       setIsVerifying(false);
     }

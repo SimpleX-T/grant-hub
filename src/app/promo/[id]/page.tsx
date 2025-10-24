@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useVerification } from "~/contexts/VerificationContext";
 import Link from "next/link";
 
@@ -76,15 +76,11 @@ const promoDetails: Record<
   },
 };
 
-export default function PromoDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function PromoDetailPage() {
   const { isVerified } = useVerification();
   const router = useRouter();
-  const promoId = params.id;
-  const promo = promoDetails[promoId];
+  const { id: promoId } = useParams<{ id: string }>();
+  const promo = promoDetails[promoId as keyof typeof promoDetails];
 
   useEffect(() => {
     if (!isVerified) {

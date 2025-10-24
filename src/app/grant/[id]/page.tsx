@@ -1,20 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useVerification } from "~/contexts/VerificationContext";
 import Link from "next/link";
 import { fetchGrants } from "~/services/api";
 import { GrantProgram } from "~/types/grants";
 
-export default function GrantDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function GrantDetailPage() {
   const { isVerified } = useVerification();
   const router = useRouter();
-  const grantId = params.id;
+  const { id: grantId } = useParams<{ id: string }>();
   const [grant, setGrant] = useState<GrantProgram | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -233,8 +229,8 @@ export default function GrantDetailPage({
                 <h2 className="text-xl font-bold text-white mb-4">Timeline</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {grant.metadata.startsAt && (
-                    <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-4">
-                      <div className="text-sm text-green-400 font-semibold uppercase mb-1">
+                    <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
+                      <div className="text-sm text-purple-400 font-semibold uppercase mb-1">
                         Starts
                       </div>
                       <div className="text-white font-semibold">

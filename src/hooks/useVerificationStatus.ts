@@ -15,7 +15,9 @@ export function useVerificationStatus(
 
     async function checkStatus() {
       try {
-        const response = await checkVerificationStatus(walletAddress);
+        const response = await checkVerificationStatus(
+          (walletAddress as string) ?? ""
+        );
         setIsVerified(response.isVerified);
       } catch (error) {
         console.error("Verification check failed:", error);

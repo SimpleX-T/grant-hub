@@ -8,7 +8,7 @@ import type { Config } from "tailwindcss";
  *
  * Example theme changes:
  * - Blue theme: primary: "#3182CE"
- * - Green theme: primary: "#059669"
+ * - purple theme: primary: "#059669"
  * - Red theme: primary: "#DC2626"
  * - Orange theme: primary: "#EA580C"
  */
