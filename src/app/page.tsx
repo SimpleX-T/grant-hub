@@ -43,7 +43,7 @@ export default function Home() {
   const totalPages = Math.ceil(totalCount / grantsPerPage);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-purple-950/20 to-blue-950/20">
+    <div className="min-h-screen bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Hero Section */}
         <Hero totalCount={totalCount} isVerified={isVerified} />
