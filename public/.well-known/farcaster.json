@@ -1,26 +1,24 @@
 {
+  "accountAssociation": {
+    "header": "eyJmaWQiOjgzNDY5NiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDhEREFlNENDZjVGQjJhY2E4RTdGYWNlNUUyNGJFNzI4NDVBRGYyMkYifQ",
+    "payload": "eyJkb21haW4iOiJncmFudC1odWItcHNpLnZlcmNlbC5hcHAifQ",
+    "signature": "TbpT5/8pUWoqaHhl/jrV2A6R6rBVB3SpwQzvO1zduztb22Qokluv6SFU5vNnhFlReLxt/hDx/jPXGNhwPPsI5xw="
+  },
   "miniapp": {
-    "name": "Grant Hub",
     "version": "1",
-    "iconUrl": "https://grant-hub-psi.vercel.app/favicon.ico",
+    "name": "Grant Hub",
+    "iconUrl": "https://grant-hub-psi.vercel.app/icon.png",
     "homeUrl": "https://grant-hub-psi.vercel.app",
-    "imageUrl": "https://grant-hub-psi.vercel.app/image.png",
-    "buttonTitle": "View Grants",
     "splashImageUrl": "https://grant-hub-psi.vercel.app/splash.png",
     "splashBackgroundColor": "#9333EA",
     "webhookUrl": "https://grant-hub-psi.vercel.app/api/webhook",
-    "subtitle": "Discover Web3 Grants on Base and other EVM networks",
-    "description": "Discover Web3 Grants on Base and other EVM networks",
-    "primaryCategory": "utility",
-    "ogTitle": "Grants Hub",
+    "subtitle": "Discover Web3 Grants",
+    "description": "Explore and apply for grants programs. Browse active opportunities and get verified to unlock exclusive access.",
+    "primaryCategory": "finance",
+    "tags": ["grants", "funding", "opportunities", "web3", "builders"],
+    "tagline": "Discover Web3 Grant Programs",
+    "ogTitle": "Grant Hub",
     "ogDescription": "Discover Web3 Grants on Base and other EVM networks",
-    "tags": ["grants", "offers", "social", "fun", "builders"],
-    "accountAssociation": {
-      "header": "eyJmaWQiOjgzNDY5NiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDhEREFlNENDZjVGQjJhY2E4RTdGYWNlNUUyNGJFNzI4NDVBRGYyMkYifQ",
-      "payload": "eyJkb21haW4iOiJncmFudC1odWItcHNpLnZlcmNlbC5hcHAifQ",
-      "signature": "TbpT5/8pUWoqaHhl/jrV2A6R6rBVB3SpwQzvO1zduztb22Qokluv6SFU5vNnhFlReLxt/hDx/jPXGNhwPPsI5xw="
-    },
-
     "requiredCapabilities": [
       "actions.signIn",
       "wallet.getEthereumProvider",
