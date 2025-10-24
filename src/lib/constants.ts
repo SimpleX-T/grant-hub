@@ -32,6 +32,38 @@ export const APP_DESCRIPTION: string =
   "Discover Web3 Grants on Base and other EVM networks";
 
 /**
+ * Short subtitle displayed under the app name.
+ * Max 30 characters, no emojis or special characters.
+ */
+export const APP_SUBTITLE: string = "Discover Web3 Grants";
+
+/**
+ * Detailed description for promotional purposes.
+ * Max 170 characters, no emojis or special characters.
+ */
+export const APP_LONG_DESCRIPTION: string =
+  "Explore and apply for grants programs. Browse active opportunities and get verified to unlock exclusive access.";
+
+/**
+ * Marketing tagline for the app.
+ * Max 30 characters.
+ */
+export const APP_TAGLINE: string = "Discover Web3 Grant Programs";
+
+/**
+ * Open Graph title for social sharing.
+ * Max 30 characters.
+ */
+export const APP_OG_TITLE: string = "Grant Hub";
+
+/**
+ * Open Graph description for social sharing.
+ * Max 100 characters.
+ */
+export const APP_OG_DESCRIPTION: string =
+  "Discover Web3 Grants on Base and other EVM networks";
+
+/**
  * The primary category for the mini app.
  * Used for app store categorization and discovery.
  */
@@ -72,15 +104,26 @@ export const APP_SPLASH_URL: string = `${APP_URL}/splash.png`;
  * Background color for the splash screen.
  * Used as fallback when splash image is loading.
  */
-export const APP_SPLASH_BACKGROUND_COLOR: string = "#800080";
+export const APP_SPLASH_BACKGROUND_COLOR: string = "#9333EA";
+
+/**
+ * URL for the app's hero/promotional image.
+ * Used in app store and promotional displays (1200 x 630px).
+ */
+export const APP_HERO_IMAGE_URL: string = `${APP_URL}/api/opengraph-image`;
 
 /**
  * Account association for the mini app.
  * Used to associate the mini app with a Farcaster account.
  * If not provided, the mini app will be unsigned and have limited capabilities.
  */
-export const APP_ACCOUNT_ASSOCIATION: AccountAssociation | undefined =
-  undefined;
+export const APP_ACCOUNT_ASSOCIATION: AccountAssociation | undefined = {
+  header:
+    "eyJmaWQiOjgzNDY5NiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDhEREFlNENDZjVGQjJhY2E4RTdGYWNlNUUyNGJFNzI4NDVBRGYyMkYifQ",
+  payload: "eyJkb21haW4iOiJncmFudC1odWItcHNpLnZlcmNlbC5hcHAifQ",
+  signature:
+    "TbpT5/8pUWoqaHhl/jrV2A6R6rBVB3SpwQzvO1zduztb22Qokluv6SFU5vNnhFlReLxt/hDx/jPXGNhwPPsI5xw=",
+};
 
 // --- UI Configuration ---
 /**
@@ -128,6 +171,15 @@ export const ANALYTICS_ENABLED: boolean = true;
  * solana:mainnet, solana:devnet
  */
 export const APP_REQUIRED_CHAINS: string[] = ["eip155:8453"];
+
+/**
+ * Required capabilities for the mini app.
+ * Specifies what SDK features the app needs from the host client.
+ */
+export const APP_REQUIRED_CAPABILITIES: string[] = [
+  "actions.signIn",
+  "wallet.getEthereumProvider",
+];
 
 /**
  * Return URL for the mini app.
