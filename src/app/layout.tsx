@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 
 import "~/app/globals.css";
 import { Providers } from "~/app/providers";
@@ -20,6 +21,12 @@ export default async function RootLayout({
       <body className="antialiased">
         <Providers>
           <LayoutContent>{children}</LayoutContent>
+          <Toaster 
+            position="top-right" 
+            richColors 
+            closeButton
+            duration={4000}
+          />
         </Providers>
       </body>
     </html>

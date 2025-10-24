@@ -16,7 +16,7 @@ interface VerificationContextType {
   setIsVerified: (verified: boolean) => void;
   setWalletAddress: (address: string | null) => void;
   setVerificationCid: (cid: string | null) => void;
-  checkUserVerification: (address: string) => Promise<void>;
+  checkUserVerification: (address: string) => Promise<any>;
 }
 
 const VerificationContext = createContext<VerificationContextType | undefined>(
@@ -55,8 +55,10 @@ export function VerificationProvider({ children }: { children: ReactNode }) {
         localStorage.setItem("verificationCid", status.cid);
       }
       localStorage.setItem("isVerified", status.isVerified.toString());
+      return status; // Return status for toast notifications
     } catch (error) {
       console.error("Failed to check verification:", error);
+      throw error; // Throw error so it can be caught and shown in toast
     }
   };
 

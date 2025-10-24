@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAccount } from "wagmi";
+import { toast } from "sonner";
 import { useVerification } from "~/contexts/VerificationContext";
 import { startVerification } from "~/services/api";
 
@@ -21,11 +22,19 @@ export default function VerifyPage() {
   const handleVerify = async () => {
     if (!address) {
       setError("Wallet not detected. Please try again.");
+      toast.error("Wallet Not Connected", {
+        description: "Please connect your wallet to continue verification.",
+      });
       return;
     }
 
     setIsVerifying(true);
     setError(null);
+
+    // Show loading toast
+    const loadingToast = toast.loading("Starting verification process...", {
+      description: "Please wait while we verify your student status.",
+    });
 
     try {
       // Call the real Keystone verification API
@@ -39,13 +48,29 @@ export default function VerifyPage() {
       setWalletAddress(address);
       setVerificationCid(response.cid);
 
-      // Show success and redirect
+      // Dismiss loading toast and show success
+      toast.dismiss(loadingToast);
+      toast.success("Verification Successful! 🎉", {
+        description: `You've been verified as a student. Redirecting to grants...`,
+        duration: 5000,
+      });
+
+      // Redirect after showing success message
       setTimeout(() => {
         router.push("/");
       }, 1500);
     } catch (err: any) {
       console.error("Verification failed:", err);
-      setError(err.message || "Verification failed. Please try again later.");
+      const errorMessage =
+        err.message || "Verification failed. Please try again later.";
+      setError(errorMessage);
+
+      // Dismiss loading toast and show error
+      toast.dismiss(loadingToast);
+      toast.error("Verification Failed", {
+        description: errorMessage,
+        duration: 6000,
+      });
       setIsVerifying(false);
     }
   };
@@ -53,18 +78,58 @@ export default function VerifyPage() {
   const handleCheckExisting = async () => {
     if (!address) {
       setError("Wallet not detected. Please try again.");
+      toast.error("Wallet Not Connected", {
+        description: "Please connect your wallet to check verification status.",
+      });
       return;
     }
 
     setIsVerifying(true);
     setError(null);
 
+    // Show loading toast
+    const loadingToast = toast.loading("Checking verification status...", {
+      description: "Fetching your verification details from the blockchain.",
+    });
+
     try {
-      await checkUserVerification(address);
-      router.push("/");
+      const status = await checkUserVerification(address);
+
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+
+      if (status.isVerified) {
+        // User is verified
+        toast.success("Already Verified! ✓", {
+          description: `Your student status is verified. ${
+            status.cid ? "CID: " + status.cid.slice(0, 10) + "..." : ""
+          }`,
+          duration: 5000,
+        });
+
+        setTimeout(() => {
+          router.push("/");
+        }, 1500);
+      } else {
+        // User is not verified
+        toast.info("Not Verified Yet", {
+          description:
+            "You haven't completed student verification. Click 'Start Verification' to begin.",
+          duration: 6000,
+        });
+        setIsVerifying(false);
+      }
     } catch (err: any) {
       console.error("Failed to check verification status:", err);
-      setError("Failed to check verification status");
+      const errorMessage = err.message || "Failed to check verification status";
+      setError(errorMessage);
+
+      // Dismiss loading toast and show error
+      toast.dismiss(loadingToast);
+      toast.error("Status Check Failed", {
+        description: errorMessage,
+        duration: 6000,
+      });
       setIsVerifying(false);
     }
   };
