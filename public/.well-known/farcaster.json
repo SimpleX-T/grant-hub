@@ -19,10 +19,8 @@
     "tagline": "Discover Web3 Grant Programs",
     "ogTitle": "Grant Hub",
     "ogDescription": "Discover Web3 Grants on Base and other EVM networks",
-    "requiredCapabilities": [
-      "actions.signIn",
-      "wallet.getEthereumProvider",
-      "actions.swapToken"
-    ]
+    "heroImageUrl": "https://grant-hub-psi.vercel.app/api/opengraph-image",
+    "ogImageUrl": "https://grant-hub-psi.vercel.app/api/opengraph-image",
+    "requiredCapabilities": ["actions.signIn", "wallet.getEthereumProvider"]
   }
 }
