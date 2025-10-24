@@ -1,4 +1,9 @@
 {
+  "accountAssociation": {
+    "header": "eyJmaWQiOjgzNDY5NiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDhEREFlNENDZjVGQjJhY2E4RTdGYWNlNUUyNGJFNzI4NDVBRGYyMkYifQ",
+    "payload": "eyJkb21haW4iOiJncmFudC1odWItcHNpLnZlcmNlbC5hcHAifQ",
+    "signature": "TbpT5/8pUWoqaHhl/jrV2A6R6rBVB3SpwQzvO1zduztb22Qokluv6SFU5vNnhFlReLxt/hDx/jPXGNhwPPsI5xw="
+  },
   "miniapp": {
     "version": "1",
     "name": "Grant Hub",
@@ -16,11 +21,6 @@
     "ogDescription": "Discover Web3 Grants on Base and other EVM networks",
     "heroImageUrl": "https://grant-hub-psi.vercel.app/api/opengraph-image",
     "ogImageUrl": "https://grant-hub-psi.vercel.app/api/opengraph-image",
-    "requiredCapabilities": ["actions.signIn", "wallet.getEthereumProvider"],
-    "accountAssociation": {
-      "header": "eyJmaWQiOjgzNDY5NiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDhEREFlNENDZjVGQjJhY2E4RTdGYWNlNUUyNGJFNzI4NDVBRGYyMkYifQ",
-      "payload": "eyJkb21haW4iOiJncmFudC1odWItcHNpLnZlcmNlbC5hcHAifQ",
-      "signature": "TbpT5/8pUWoqaHhl/jrV2A6R6rBVB3SpwQzvO1zduztb22Qokluv6SFU5vNnhFlReLxt/hDx/jPXGNhwPPsI5xw="
-    }
+    "requiredCapabilities": ["actions.signIn", "wallet.getEthereumProvider"]
   }
 }
