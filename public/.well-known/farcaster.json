@@ -1,15 +1,21 @@
 {
-  "version": "1.0.0",
-  "name": "Grant Hub",
-  "description": "Grant Hub - Discover Web3 Grants on Base and other EVM networks",
-  "icons": [
-    {
-      "src": "/favicon.ico",
-      "sizes": "16x16",
-      "type": "image/x-icon"
-    }
-  ],
-
+  "frame": {
+    "name": "Grant Hub",
+    "version": "1",
+    "iconUrl": "https://grant-hub-psi.vercel.app/favicon.ico",
+    "homeUrl": "https://grant-hub-psi.vercel.app",
+    "imageUrl": "https://grant-hub-psi.vercel.app/image.png",
+    "buttonTitle": "View Grants",
+    "splashImageUrl": "https://grant-hub-psi.vercel.app/splash.png",
+    "splashBackgroundColor": "#9333EA",
+    "webhookUrl": "https://grant-hub-psi.vercel.app/api/webhook",
+    "subtitle": "Discover Web3 Grants on Base and other EVM networks",
+    "description": "Discover Web3 Grants on Base and other EVM networks",
+    "primaryCategory": "utility",
+    "ogTitle": "Grants Hub",
+    "ogDescription": "Discover Web3 Grants on Base and other EVM networks",
+    "tags": ["grants", "offers", "social", "fun", "builders"]
+  },
   "accountAssociation": {
     "header": "eyJmaWQiOjgzNDY5NiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDhEREFlNENDZjVGQjJhY2E4RTdGYWNlNUUyNGJFNzI4NDVBRGYyMkYifQ",
     "payload": "eyJkb21haW4iOiJncmFudC1odWItcHNpLnZlcmNlbC5hcHAifQ",
