@@ -9,6 +9,8 @@
 
     // Allow explicit any types (sometimes necessary for dynamic imports and APIs)
     "@typescript-eslint/no-explicit-any": "off",
+    // Allow quotes and apostrophes in JSX
+    "react/no-unescaped-entities": "off",
 
     // Allow unused variables that start with underscore
     "@typescript-eslint/no-unused-vars": [
