@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatBudget, getGrantIcon } from "../../../lib/helpers";
+import { formatBudget, getGrantIcon } from "../../lib/helpers";
 import { GrantProgram } from "~/types/grants";
 
 export default function GrantCard({ grant }: { grant: GrantProgram }) {
